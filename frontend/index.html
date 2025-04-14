@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number System Converter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="toggle-container">
+        <label class="switch">
+            <input type="checkbox" id="darkModeToggle">
+            <span class="slider round"></span>
+        </label>
+        <span>🌗 Dark Mode</span>
+    </div>
+
+    <div class="container">
+        <h2>Number System Converter</h2>
+        <input type="text" id="numberInput" placeholder="Enter number" name="number1">
+        <input type="text" id="numberInput2" placeholder="Enter second number" name="number2">
+
+        <label>From:</label>
+        <select id="fromBase" name="fromBase">
+            <option value="2">Binary</option>
+            <option value="8">Octal</option>
+            <option value="10" selected>Decimal</option>
+            <option value="16">Hexadecimal</option>
+        </select>
+
+        <label>To:</label>
+        <select id="toBase" name="toBase">
+            <option value="2">Binary</option>
+            <option value="8">Octal</option>
+            <option value="10">Decimal</option>
+            <option value="16">Hexadecimal</option>
+        </select>
+
+        <label>Operation:</label>
+        <select id="operation" name="operation">
+            <option value="add">Addition (+)</option>
+            <option value="subtract">Subtraction (-)</option>
+            <option value="multiply">Multiplication (*)</option>
+            <option value="divide">Division (/)</option>
+            <option value="modulo">Modulo (%)</option>
+            <option value="exponent">Exponentiation (^)</option>
+            <option value="and">Bitwise AND (&)</option>
+            <option value="or">Bitwise OR (|)</option>
+            <option value="xor">Bitwise XOR (^)</option>
+            <option value="not1">Bitwise NOT (~) on First</option>
+            <option value="not2">Bitwise NOT (~) on Second</option>
+        </select>
+
+        <button onclick="convert()">Convert</button>
+
+        <h3>Result: <span id="result"></span></h3>
+
+        <div id="preview">
+            <h4>🔍 Live Preview:</h4>
+            <p>Binary: <span id="previewBin">-</span></p>
+            <p>Octal: <span id="previewOct">-</span></p>
+            <p>Decimal: <span id="previewDec">-</span></p>
+            <p>Hex: <span id="previewHex">-</span></p>
+        </div>
+        
+
+        <div id="history">
+            <h4>📜 Conversion History (Last 5):</h4>
+            <ul id="historyList"></ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
